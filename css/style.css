@@ -1,0 +1,193 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+.team-container {
+  width: 100%;
+  background: #e6e6e6;
+  padding: 10vh 0;
+}
+
+.head {
+  width: fit-content;
+  border-left: 3px solid #303030;
+  margin-left: 10vw;
+  margin: 3%;
+}
+
+.head h1 {
+  font-size: 3vw;
+  color: #000000;
+  line-height: 3vw;
+  padding-left: 2vw;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.team {
+  position: relative;
+  max-width: 90%;
+  width: 100%;
+  padding: 30px 0;
+  overflow: hidden;
+}
+
+.team .image {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team .slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  row-gap: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+.slide p {
+  text-align: center;
+  padding: 0 40px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+}
+
+.slide .quote-icon {
+  font-size: 30px;
+  color: #4070f4;
+}
+
+.slide .details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details .name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f0f0f;
+}
+
+.details .job {
+  font-size: 12px;
+  font-weight: 400;
+  color: #0f0f0f;
+}
+
+/* swiper button css */
+.nav-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  transform: translateY(30px);
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.nav-btn::after,
+.nav-btn::before {
+  font-size: 20px;
+  color: #000000;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(86, 86, 86, 0.994);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #4070f4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .head h1 {
+    font-size: 2.5vw;
+  }
+
+  .slide p {
+    padding: 0 30px;
+    font-size: 14px;
+  }
+
+  .team .image {
+    height: 120px;
+    width: 120px;
+  }
+
+  .details .name {
+    font-size: 13px;
+  }
+
+  .details .job {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .head h1 {
+    font-size: 4vw;
+  }
+
+  .slide p {
+    padding: 0 20px;
+    font-size: 12px;
+  }
+
+  .team .image {
+    height: 100px;
+    width: 100px;
+  }
+
+  .details .name {
+    font-size: 12px;
+  }
+
+  .details .job {
+    font-size: 10px;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .head h1 {
+    font-size: 5vw;
+  }
+
+  .slide p {
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .team .image {
+    height: 80px;
+    width: 80px;
+  }
+
+  .details .name {
+    font-size: 11px;
+  }
+
+  .details .job {
+    font-size: 9px;
+  }
+}

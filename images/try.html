@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form with Map Background</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Arial', sans-serif;
+       }
+
+       .page6 {
+           display: flex;
+           flex-direction: column;
+           min-height: 100vh;
+           justify-content: space-between;
+       }
+
+       .contact-container {
+           display: flex;
+           height: 90vh;
+           position: relative;
+           /* background-color: aqua; */
+       }
+
+       .contact-container h1 {
+           color: #fff;
+           font-size: 6vw;
+           line-height: 13vh;
+           margin-top: 28%;
+           margin-left: 6.5%;
+           background-color: rgba(27, 27, 27, 0.62);
+           height: 15vh;
+           z-index: 2;
+       }
+
+       .map {
+           width: 100%;
+           position: absolute;
+           z-index: 1;
+           background-color: #1b1b1b;
+       }
+
+       .Mymap {
+           width: 100%;
+           height: 80vh;
+           z-index: 0;
+           filter: grayscale(100%) invert(100%);
+       }
+
+       .form-container {
+           width: 450px;
+           height: 85vh;
+           background-color: #fff;
+           padding: 30px;
+           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+           position: absolute;
+           right: 10%;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           z-index: 1;
+       }
+
+       form h2 {
+           margin-bottom: 20px;
+           font-size: 3vw;
+       }
+
+       .form-group {
+           margin-bottom: 20px;
+       }
+
+       input[type="text"], input[type="email"], input[type="tel"], textarea {
+           width: 100%;
+           padding: 10px;
+           border: 1px solid #ddd;
+           border-radius: 5px;
+           font-size: 16px;
+       }
+
+       textarea {
+           height: 15vh;
+           max-height: 20vh;
+           resize: vertical;
+       }
+
+       .form-box {
+           display: flex;
+           justify-content: center;
+           gap: 5vw;
+           padding: 10px 0;
+           margin-top: 2vh;
+       }
+
+       .custom-file-upload {
+           display: block;
+           background-color: #eee;
+           padding: 12px 15px;
+           text-align: center;
+           border-radius: 5px;
+           cursor: pointer;
+           border: 1px solid #ddd;
+           height: 8vh;
+           width: 10vw;
+       }
+       .custom-file-upload i{
+        margin-left: 0.5vw;
+        font-size: 1.5vw;
+       }
+       input[type="file"] {
+           display: none;
+       }
+
+       .form-btn {
+           width: 10vw;
+           height: 8vh;
+           background-color: #1b1b1b;
+           color: white;
+           border: none;
+           border-radius: 5px;
+           font-size: 1.2vw;
+           cursor: pointer;
+       }
+
+       .form-btn:hover {
+           background-color: #333;
+       }
+
+       /* Responsive Styles */
+       @media screen and (max-width: 1200px) {
+           .form-container {
+               right: 5%;
+               width: 40%;
+           }
+
+           .contact-container h1 {
+               font-size: 5vw;
+               margin-top: 20%;
+           }
+       }
+
+       @media screen and (max-width: 900px) {
+           .form-container {
+               right: 5%;
+               width: 50%;
+               padding: 20px;
+           }
+
+           .contact-container h1 {
+               font-size: 4vw;
+               margin-top: 20%;
+           }
+
+           form h2 {
+               font-size: 4vw;
+           }
+       }
+
+       @media screen and (max-width: 768px) {
+           .form-container {
+               width: 60%;
+               right: 0;
+               padding: 15px;
+           }
+
+           .contact-container h1 {
+               font-size: 6vw;
+               margin-top: 10%;
+               margin-left: 5%;
+           }
+
+           .form-btn {
+               width: 40%;
+               height: 6vh;
+               font-size: 4vw;
+           }
+
+           .custom-file-upload {
+               width: 40%;
+               height: 6vh;
+               font-size: 3vw;
+           }
+
+           .form-box {
+               flex-direction: column;
+               gap: 20px;
+               margin-top: 20px;
+           }
+       }
+
+       @media screen and (max-width: 576px) {
+           .form-container {
+               width: 80%;
+               padding: 15px;
+           }
+
+           .contact-container h1 {
+               font-size: 7vw;
+               margin-top: 15%;
+               margin-left: 5%;
+           }
+
+           .form-btn, .custom-file-upload {
+               width: 100%;
+               height: 6vh;
+               font-size: 4vw;
+           }
+       }
+
+       @media screen and (max-width: 400px) {
+           .form-container {
+               width: 90%;
+           }
+
+           .contact-container h1 {
+               font-size: 8vw;
+               margin-top: 10%;
+           }
+
+           .form-btn, .custom-file-upload {
+               width: 100%;
+               height: 6vh;
+               font-size: 5vw;
+           }
+
+           form h2 {
+               font-size: 5vw;
+           }
+       }
+    </style>
+</head>
+<body>
+    <div class="page6">
+        <div class="contact-container">
+            <h1>Work with Us</h1>
+            <div class="map">
+                <iframe class="Mymap" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d920.8427367406296!2d75.3110809695015!3d22.602619036815373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396236760bfceb15%3A0xf7852c9fe8d415d0!2sTrimurti%20Nagar%2C%20Dhar%2C%20Madhya%20Pradesh%20454001!5e0!3m2!1sen!2sin!4v1727942486124!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="form-container">
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <h2>Connect with Us</h2>
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="School" placeholder="School Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Position" placeholder="Postion of Inquirey" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Message" required></textarea>
+                    </div>
+
+                    <div class="form-box">
+                        <label for="file-upload" class="custom-file-upload">
+                            <input id="file-upload" type="file" name="file">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> Resume
+                        </label>
+                        <button class="form-btn" type="submit">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = form.querySelector('input[name="name"]').value;
+            const email = form.querySelector('input[name="email"]').value;
+            const message = form.querySelector('textarea[name="message"]').value;
+
+            if (name && email && message) {
+                alert("Message sent successfully!");
+                form.reset();
+            } else {
+                alert("Please fill in all required fields.");
+            }
+        });
+    </script>
+</body>
+</html>
